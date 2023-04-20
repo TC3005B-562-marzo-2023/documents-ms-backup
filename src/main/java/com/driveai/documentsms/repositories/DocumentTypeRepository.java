@@ -1,6 +1,5 @@
 package com.driveai.documentsms.repositories;
 
-import com.driveai.documentsms.models.Document;
 import com.driveai.documentsms.models.DocumentType;
 import org.springframework.data.repository.CrudRepository;
 
