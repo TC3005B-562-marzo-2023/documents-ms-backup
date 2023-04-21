@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -67,4 +68,10 @@ public class DocumentController {
         String message = "Document Type with id: " + id + " deleted";
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+
+    @GetMapping("/show/document")
+    public ResponseEntity<List<Document>> getAllDocuments() {
+        return ResponseEntity.ok(documentService.getAllDocuments());
+    }
+
 }
