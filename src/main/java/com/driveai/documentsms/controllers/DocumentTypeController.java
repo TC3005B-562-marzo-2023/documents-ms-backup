@@ -31,7 +31,7 @@ public class DocumentTypeController {
         }
     }
 
-    @PutMapping("/create")
+    @PutMapping("/update")
     public ResponseEntity<?> updateDocumentType (@RequestBody DocumentType document) {
         try {
             DocumentType newDoc = documentTypeService.updateDocumentType(document);
