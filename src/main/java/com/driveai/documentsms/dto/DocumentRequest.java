@@ -1,12 +1,11 @@
 package com.driveai.documentsms.dto;
 
-import com.driveai.documentsms.models.Document;
-
 public class DocumentRequest {
     private int userId;
     private String link;
     private int referenceTable;
     private int documentTypeId;
+
     public int getUserId() {
         return userId;
     }
