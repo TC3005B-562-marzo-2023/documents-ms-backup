@@ -66,4 +66,13 @@ public class DocumentService {
             throw new Exception("document with id: " + id + " doesn't exist");
         }
     }
+
+    public Document showById(int id) throws Exception {
+        Optional<Document> document = documentRepository.findById(id);
+        if(document.isPresent()) {
+            return document.get();
+        } else {
+            throw new Exception("Todo " + id + " does not exist");
+        }
+    }
 }

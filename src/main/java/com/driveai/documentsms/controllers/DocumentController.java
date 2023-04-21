@@ -69,6 +69,18 @@ public class DocumentController {
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
+    @GetMapping("/show")
+    public ResponseEntity<?> showById(@RequestParam("id")int id){
+        try {
+            Document document = documentService.showById(id);
+            return new ResponseEntity<>(document, HttpStatus.OK);
+        } catch (Exception e) {
+            Map<String,String> response = new HashMap<>();
+            response.put("message", e.getMessage());
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @GetMapping("/show/document")
     public ResponseEntity<List<Document>> getAllDocuments() {
         return ResponseEntity.ok(documentService.getAllDocuments());
