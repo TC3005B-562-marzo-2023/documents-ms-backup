@@ -8,6 +8,7 @@ import com.driveai.documentsms.repositories.DocumentTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -17,6 +18,10 @@ public class DocumentService {
 
     @Autowired
     private DocumentTypeRepository documentTypeRepository;
+
+    public List<Document> getAllDocuments() {
+        return documentRepository.findAll();
+    }
 
     public Document createDocument(DocumentRequest doc) throws Exception {
         //Check if there already is a document with same link and user
