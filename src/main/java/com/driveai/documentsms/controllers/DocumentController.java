@@ -67,4 +67,16 @@ public class DocumentController {
         String message = "Document Type with id: " + id + " deleted";
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+
+    @GetMapping("/show")
+    public ResponseEntity<?> showById(@RequestParam("id")int id){
+        try {
+            Document document = documentService.showById(id);
+            return new ResponseEntity<>(document, HttpStatus.OK);
+        } catch (Exception e) {
+            Map<String,String> response = new HashMap<>();
+            response.put("message", e.getMessage());
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
