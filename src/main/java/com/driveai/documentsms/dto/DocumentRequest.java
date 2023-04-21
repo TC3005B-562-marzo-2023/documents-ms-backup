@@ -37,4 +37,6 @@ public class DocumentRequest {
     public void setDocumentTypeId(int documentTypeId) {
         this.documentTypeId = documentTypeId;
     }
+
+
 }
